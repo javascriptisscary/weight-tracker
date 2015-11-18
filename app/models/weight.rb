@@ -1,4 +1,4 @@
 class Weight < ActiveRecord::Base
-belongs_to :user
-belongs_to :day
+has_many :days
+has_many :users, through: :days
 end
