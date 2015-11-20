@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
-  get 'stats/index'
-
-  devise_for :users
-  resources :users
+  get 'days/new'
+  get 'days/index'
   get 'users/index'
+  
+  post 'days/create'
+  
+  devise_for :users
+  
+  
+  resources :users
+  resources :days
+ 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

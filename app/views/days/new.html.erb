@@ -1,0 +1,19 @@
+<h2>Days#create</h2>
+
+
+<%= form_for @day do |f| %>
+<div class="row text-center">
+    <div class="col-md-6 col-xs-12">
+        <div class="form-group">
+            <%= f.label :date%>
+        <%=   f.date_field(:date, value: Date.today.to_s(:db))%>
+        </div>      
+        <div class="form-group">
+            <%= f.label :weight %>
+            <%= f.text_field :weight, class: "form-control", placeholder: "Enter Weight" %>
+        </div>
+    </div>
+</div>
+    
+<%= f.submit "Submit" %>   
+<% end %>
