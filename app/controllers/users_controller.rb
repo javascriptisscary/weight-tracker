@@ -9,7 +9,44 @@ class UsersController < ApplicationController
 
   # GET /users/1
   # GET /users/1.json
+  #profile page after logging in
   def show
+      
+    
+    #first grab ALL the days from the specific user
+    user_days = Day.where(user_id: current_user.id)
+    @days_sorted =user_days.sort_by &:date
+    
+    #arrays for graphing
+    dates_array = []
+    weight_array = []
+    @days_sorted. each do |y|
+      dates_array.push(y.date)
+      weight_array.push(y.weight)
+    end
+    
+    
+   
+   #lazy high graph
+    @chart = LazyHighCharts::HighChart.new('area') do |f|
+      f.title(:text => "Weight by Date")
+      
+      
+        f.xAxis(categories: dates_array)
+      
+        f.series(:name => "Pounds", :yAxis => 0, :data => weight_array)
+      
+
+      f.yAxis [
+        {:title => {:text => "Weight",  :margin => 50} }
+        
+      ]
+
+      f.legend(:align => 'right', :verticalAlign => 'top', :y => 75, :x => -50, :layout => 'vertical',)
+      f.chart({:defaultSeriesType=>"line"})
+    end
+ 
+  
   end
 
   # GET /users/new
