@@ -10,9 +10,9 @@ module UsersHelper
     change =first-last
     
     if change > 0
-        return "You've lost #{change} pounds over your last 7 dates!"
+        return content_tag :span, "You've lost #{change.round(1)} pounds over your last 7 dates!", class: "green"
     elsif change < 0
-      return "You've gained #{change} pounds. Time to get refocused!"
+      return content_tag :span, "You've gained #{change.round(1)} pounds. Time to get refocused!", class: "red"
     else
       return "0."
     end

@@ -11,7 +11,7 @@
     <td>Weight</td>
   </tr>
 <% @last_7.each do |x| %>
-<tr>
+<tr class="context">
 <td><%=x.date%></td>
 <td class ="weight"><%=x.weight%></td>
 </tr>
@@ -22,8 +22,7 @@
 
 <p>
   <strong>Recent Weight Change: </strong> 
- 
-<%= weight_change(@last_7) %></p>
+ <%= weight_change(@last_7) %></p>
 
 
 </div>

@@ -1,3 +1,35 @@
 .nav.navbar-nav.navbar-right li a {
     color: white;
 }
+
+.btn {
+    margin-left:4%;
+    margin-right 4%;
+    
+}
+
+.btn:hover {
+    background-color: white;
+}
+
+.navbar-brand{
+    font-family: Kalam, arial, monospace;
+    text-decoration: underline;
+    font-size: 3em;
+    
+}
+
+.navbar-inverse .navbar-brand {
+    color:white;
+    
+}
+
+.navbar-inverse .navbar-brand:hover{
+    color:gray;
+}
+
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    background-color: #FFFFFF;
+    color: black;
+}

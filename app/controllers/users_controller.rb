@@ -26,6 +26,14 @@ class UsersController < ApplicationController
       weight_array.push(y.weight)
     end
     
+    #remove year from dates, to make charts more legible
+    no_year_array =[]
+    dates_array.each do |x|
+      y =x.to_s
+      y.slice!("2015-")
+      no_year_array.push(y)
+    end 
+    
     #grab last 7 days for recent entries table
     @last_7 = @days_sorted.pop(7)
     
@@ -35,7 +43,7 @@ class UsersController < ApplicationController
       f.title(:text => "Weight by Date")
       
       
-        f.xAxis(categories: dates_array)
+        f.xAxis(categories: no_year_array)
       
         f.series(:name => "Pounds", :yAxis => 0, :data => weight_array)
       
