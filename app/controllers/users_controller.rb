@@ -17,6 +17,7 @@ class UsersController < ApplicationController
     user_days = Day.where(user_id: current_user.id)
     @days_sorted =user_days.sort_by &:date
     
+    
     #arrays for graphing
     dates_array = []
     weight_array = []
@@ -25,6 +26,8 @@ class UsersController < ApplicationController
       weight_array.push(y.weight)
     end
     
+    #grab last 7 days for recent entries table
+    @last_7 = @days_sorted.pop(7)
     
    
    #lazy high graph

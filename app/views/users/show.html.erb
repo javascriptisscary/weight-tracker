@@ -1,3 +1,4 @@
+
 <p id="notice"><%= notice %></p>
 <div class= "container">
 <%= high_chart("orders_chart", @chart) %>
@@ -9,10 +10,10 @@
     <td>Date</td>
     <td>Weight</td>
   </tr>
-<% @days_sorted.each do |x| %>
+<% @last_7.each do |x| %>
 <tr>
 <td><%=x.date%></td>
-<td><%=x.weight%></td>
+<td class ="weight"><%=x.weight%></td>
 </tr>
 <% end%>
 </table>
@@ -20,14 +21,11 @@
 
 
 <p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
-</p>
+  <strong>Recent Weight Change: </strong> 
+ 
+<%= weight_change(@last_7) %></p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-</p>
+
 </div>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
