@@ -1,26 +1,28 @@
-<h2>Log in</h2>
+<div class="container">
+<h2 class ="kalam">Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+  <div class="form-horizontal">
+    <%= f.label :email, class: "control-label" %>
+    <%= f.email_field :email, autofocus: true,  class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+  <div class="form-horizontal">
+    <%= f.label :password, class: "control-label" %>
+    <%= f.password_field :password, autocomplete: "off",  class: "form-control" %>
   </div>
 
   <% if devise_mapping.rememberable? -%>
-    <div class="field">
+    <div class="form-horizontal">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
     </div>
   <% end -%>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+  <div class="form-horizontal">
+    <%= f.submit "Log in", class:"btn btn-lg btn-success", id:"submit" %>
   </div>
 <% end %>
-
+</div>
 <%= render "devise/shared/links" %>
+<%= render "layouts/sticky_footer" %>

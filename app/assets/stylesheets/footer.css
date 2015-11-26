@@ -14,3 +14,17 @@
 
 
 
+/* sticky footer for singup pages where the regular footer doesn't quite work */
+.sticky-footer{
+  background-color: black;
+  border-top: 2px solid #808080;
+  height:20px;
+  width: 100%;
+  color:white;
+  position: absolute;
+  bottom: 0px;
+}
+
+.sticky-footer a {
+  float:right;
+}

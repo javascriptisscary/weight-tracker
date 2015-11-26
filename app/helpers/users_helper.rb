@@ -12,7 +12,7 @@ module UsersHelper
     if change > 0
         return content_tag :span, "You've lost #{change.round(1)} pounds over your last 7 dates!", class: "green"
     elsif change < 0
-      return content_tag :span, "You've gained #{change.round(1)} pounds. Time to get refocused!", class: "red"
+      return content_tag :span, "You've gained #{-change.round(1)} pounds over your last 7 dates. Time to get refocused!", class: "red"
     else
       return "0."
     end
