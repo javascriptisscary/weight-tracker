@@ -28,7 +28,8 @@ gem 'devise'
 #charts
 gem 'lazy_high_charts'
 
-
+#datepicker
+gem 'bootstrap-datepicker-rails'
 
 
 # Use ActiveModel has_secure_password

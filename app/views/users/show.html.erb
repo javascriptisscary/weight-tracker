@@ -1,6 +1,9 @@
 
 <p id="notice"><%= notice %></p>
 <div class= "container">
+  <p class="text-center weight-change">
+  <strong>Recent Weight Change: </strong> 
+ <%= weight_change(@last_7) %></p>
 <%= high_chart("orders_chart", @chart) %>
 
 
@@ -20,9 +23,7 @@
 
 
 
-<p>
-  <strong>Recent Weight Change: </strong> 
- <%= weight_change(@last_7) %></p>
+
 
 
 </div>

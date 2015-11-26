@@ -1,5 +1,5 @@
 class DaysController < ApplicationController
-
+  before_action :authenticate_user!
   def index
   
   
@@ -17,13 +17,14 @@ class DaysController < ApplicationController
    
      respond_to do |format|
       if @day.save
-        format.html { redirect_to :back, notice: 'Day was successfully created.' }
+        format.html { redirect_to user_path(current_user.id), notice: 'Day was successfully created.' }
         format.json { render :show, status: :created, location: @day }
       else
         format.html { render :new }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
+     
   end
   
   

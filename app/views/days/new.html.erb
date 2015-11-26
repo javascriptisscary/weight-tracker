@@ -1,19 +1,23 @@
-<h2>Days#create</h2>
+<div class="container text-center">
+  <h3>Input your weight. #Be honest!</h3>
 
 
-<%= form_for @day do |f| %>
-<div class="row text-center">
-    <div class="col-md-6 col-xs-12">
-        <div class="form-group">
-            <%= f.label :date%>
-        <%=   f.date_field(:date, value: Date.today.to_s(:db))%>
-        </div>      
-        <div class="form-group">
-            <%= f.label :weight %>
-            <%= f.text_field :weight, class: "form-control", placeholder: "Enter Weight" %>
-        </div>
+  <%= form_for @day do |f| %>
+  
+    
+      <div class="form-horizontal">
+            <%= f.label :date, class: "control-label"%>
+        <%=   f.date_field :date, class: "form-control text-center", value: Date.today.to_s(:db)%>
+      
     </div>
+    
+      <div class="form-horizontal">
+            <%= f.label :weight, class: "control-label" %>
+            <%= f.text_field :weight, class: "form-control text-center",  placeholder: "Enter Weight" %>
+      
+    </div>
+  <%= f.submit "Submit", class:"btn btn-lg btn-success", id:"submit" %>  
 </div>
     
-<%= f.submit "Submit" %>   
+ 
 <% end %>

@@ -1,0 +1,31 @@
+<%= image_tag("scale2.JPG", class: "img-responsive welcome") %>
+<div class="container" id="welcome-contain">
+  <h1 class="kalam">Features</h1>
+  <h3 class="kalam header">Tracking</h3>
+  <p>Tracking your daily weight is as easy as:</p>
+  <ol class="list">
+    <li>Wake up</li>
+    <li>Weigh Yourself</li>
+    <li>Input your weight on the site.</li>
+  </ol>
+  <p class="text-left">All of your weight data will be kept in our database for easy access.</p>
+  <p class="text-left"> Want to edit a previous entry? No problem! Want to see how much you weighed last Thanksgiving?
+  No problem! Want to see an area graph of your progress? No problem!</p>
+  <h3 class="kalam header">Graphs</h3>
+  <p>Beautiful area graph to display your progress.</p>
+  <%= image_tag("area-graph.jpg", class: "img-responsive features-pic") %>
+  <h3 class="kalam header">Tables</h3>
+  <%= image_tag("table-pic.jpg", class: "img-responsive features-pic") %>
+  <h3 class="kalam header">Coming Soon</h3>
+  <ul class="list">
+    <li>Notes for each day, stored to the database.</li>
+    <li>Save pictures from specific days to SEE your progress.</li>
+    <li>Goal weight and graph.</li>
+  </ul>
+  <h3 class="text-center kalam header"> Sign up today!</h3>
+  <%= link_to 'Signup!', new_user_registration_path, class: "btn btn-info sign-up", style: "color:black;" %>
+  
+  
+</div>
+
+

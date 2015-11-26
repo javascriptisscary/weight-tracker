@@ -1,0 +1,53 @@
+// Place all the styles related to the static controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.welcome {
+ border-top: 4px solid gray;
+ border-bottom: 4px solid gray;
+}
+
+.kalam {
+    
+    font-family: "kalam", verdana,  arial,helvetica, sans-serif;
+    
+}
+
+h1 {
+    font-size: 4em;
+    
+}
+
+p {
+    font-size: 1.2em;
+    
+}
+
+.header {
+    
+    margin-top:10%;
+    text-decoration: underline;
+}
+
+.list {
+    font-size: 1.4em;
+    margin-top:5%;
+    margin-bottom: 5%;
+    line-height: 150%;
+}
+
+.features-pic {
+    
+    box-shadow: 10px 10px 5px grey;
+ 
+}
+
+#welcome-contain{
+    text-align:center;
+    
+}
+
+.sign-up {
+    font-size: 1.5em;
+    text-decoration: underline;
+}

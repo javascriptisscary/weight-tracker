@@ -1,6 +1,7 @@
 $(document).on('page:change', function(){
 
 
+
 //change table row color to green if user lost weight, red if gained, blue if the same.
   function red_or_green() {
     var weights = document.getElementsByClassName("weight")

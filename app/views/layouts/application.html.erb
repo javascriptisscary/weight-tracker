@@ -21,7 +21,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Weight Tracker</a>
+        <%=link_to "Weight Tracker", root_path, class:"navbar-brand"%>
       </div>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
@@ -34,10 +34,6 @@
         <% end %>
     </div>
   </nav>
-
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
   <%= yield %>
   <footer class="footer">
     <a href="http://www.javascriptisscary.com/">&copy; JavaScriptisScary.com</a>
