@@ -4,14 +4,14 @@
 
   <%= form_for @day do |f| %>
   
-    
-      <div class="form-horizontal">
+    <p>Please enter date as yyyy-mm-dd</p>
+      <div class="field form-horizontal">
             <%= f.label :date, class: "control-label"%>
-        <%=   f.date_field :date, class: "form-control text-center", value: Date.today.to_s(:db)%>
+        <%=   f.date_field :date, class: "form-control text-center", id: "datepicker"%>
       
     </div>
     
-      <div class="form-horizontal">
+      <div class="field form-horizontal">
             <%= f.label :weight, class: "control-label" %>
             <%= f.text_field :weight, class: "form-control text-center",  placeholder: "Enter Weight" %>
       
@@ -21,3 +21,5 @@
     
  
 <% end %>
+
+<%= render "layouts/sticky_footer" %>

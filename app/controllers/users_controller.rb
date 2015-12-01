@@ -16,9 +16,13 @@ class UsersController < ApplicationController
     
     #first grab ALL the days from the specific user
     user_days = Day.where(user_id: current_user.id)
+    #sort days by date
     @days_sorted =user_days.sort_by &:date
+    @all =user_days.sort_by &:date
     
     
+    
+   
     #arrays for graphing
     dates_array = []
     weight_array = []
@@ -115,7 +119,8 @@ class UsersController < ApplicationController
     def set_user
       @user = User.find(params[:id])
     end
-
+    
+    
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:first_name, :last_name)

@@ -31,6 +31,11 @@ gem 'lazy_high_charts'
 #datepicker
 gem 'bootstrap-datepicker-rails'
 
+#pagination
+gem 'will_paginate', '~> 3.0.6'
+
+#fix turbolinks conflicts
+gem 'jquery-turbolinks'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

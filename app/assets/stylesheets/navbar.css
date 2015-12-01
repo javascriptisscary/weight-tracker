@@ -5,17 +5,20 @@
 .btn {
     margin-left:4%;
     margin-right 4%;
-    
+    font-size: 1.25em;
+    color:white;
 }
 
 .btn:hover {
     background-color: white;
+    color:black;
+    border-color: black;
 }
 
 .navbar-brand{
-    font-family: Kalam, arial, monospace;
+    font-family: "Kalam", arial, monospace;
     text-decoration: underline;
-    font-size: 3em;
+    font-size: 3.25em;
     
     
 }
@@ -27,6 +30,7 @@
 
 .navbar-inverse .navbar-brand:hover{
     color:gray;
+    text-decoration: underline;
 }
 
 
@@ -37,4 +41,5 @@
 
 .navbar {
     margin-bottom:0;
+    border-radius:0;
 }

@@ -11,15 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
+  <div class="field form-horizontal">
+    <%= f.label :first_name, class: "control-label" %>
+    <%= f.text_field :first_name, class: "form-control text-center" %>
   </div>
-  <div class="field">
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
+  <div class="field form-horizontal">
+    <%= f.label :last_name, class: "control-label" %>
+    <%= f.text_field :last_name, class:"form-control text-center" %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="field form-horizontal">
+  <%= f.label :email, class: "control-label" %>
+  <%= f.text_field :email, class:"form-control text-center" %>
   </div>
+  
+    <%= f.submit 'Update User', class:"btn btn-lg btn-success"%>
+  
 <% end %>

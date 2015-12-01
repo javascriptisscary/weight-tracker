@@ -10,14 +10,37 @@ module UsersHelper
     change =first-last
     
     if change > 0
-        return content_tag :span, "You've lost #{change.round(1)} pounds over your last 7 dates!", class: "green"
+        return content_tag :span, "You've lost #{change.round(1)} pounds since #{dates.first.date}", class: "green"
     elsif change < 0
-      return content_tag :span, "You've gained #{-change.round(1)} pounds over your last 7 dates. Time to get refocused!", class: "red"
+      return content_tag :span, "You've gained #{-change.round(1)} pounds since #{dates.first.date}", class: "red"
     else
       return "0."
     end
     
   end
+    
+    
+  def total_weight_change(dates)  
+     
+     x =dates
+     first = x.shift
+     last = x.pop
+     
+     
+     change = (first.weight - last.weight)
+     
+      if change > 0
+        return content_tag :span, "You've lost #{change.round(1)} total pounds", class: "green"
+      elsif change < 0
+      return content_tag :span, "You've gained #{-change.round(1)} total pounds", class: "red"
+      else
+      return "0."
+      end
+     
+  end
+    
+  
+    
     
 end
 

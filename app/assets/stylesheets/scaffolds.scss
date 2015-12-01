@@ -1,13 +1,13 @@
 body {
   background-color: #fff;
   color: #333;
-  font-family: verdana, arial, helvetica, sans-serif;
+  font-family: "lato", verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
 }
 
 p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
+  font-family: "lato", verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
 }
@@ -70,4 +70,25 @@ div {
     font-size: 12px;
     list-style: square;
   }
+}
+
+
+.notice{
+  text-align:center;
+  color:white;
+  background-color:green;
+  margin:0;
+  
+}
+
+.alert{
+  text-align:center;
+  color:white;
+  background-color:red;;
+  margin:0;
+}
+
+.form-control {
+  width:50%;
+  margin:0 auto;
 }

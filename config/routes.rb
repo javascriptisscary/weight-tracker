@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'static/index'
-
+ get 'days/edit'
   get 'days/new'
   get 'days/index'
   get 'users/index'

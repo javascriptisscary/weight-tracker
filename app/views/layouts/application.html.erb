@@ -8,6 +8,8 @@
   <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <link href='https://fonts.googleapis.com/css?family=Kalam' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
   
 </head>
@@ -23,17 +25,25 @@
         </button>
         <%=link_to "Weight Tracker", root_path, class:"navbar-brand"%>
       </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
           <li><%= link_to 'Input Weight', days_new_path, class: "btn btn-small btn-success" %> </li>
           <li><%= link_to 'Profile', user_path(current_user.id), class: "btn btn-small btn-primary"%></li>
           <li><%= link_to('Logout', destroy_user_session_path, class: "btn btn-small btn-warning", :method => :delete) %></li>
             <% else %>
-              <li><%= link_to 'Login', new_user_session_path, class: "btn btn-small btn-primary", style: "color:white" %></li>
-          <li><%= link_to'Signup', new_user_registration_path, class: "btn btn-small btn-warning", style: "color:white" %> </li>
+              <li><%= link_to 'Login', new_user_session_path, class: "btn btn-small btn-primary" %></li>
+          <li><%= link_to'Signup', new_user_registration_path, class: "btn btn-small btn-warning"%> </li>
         <% end %>
     </div>
+    </div>
   </nav>
+  <% if notice %>
+  <p class="notice"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+  <p class="alert"><%= alert %></p>
+  <% end %>
   <%= yield %>
   
 </body>
