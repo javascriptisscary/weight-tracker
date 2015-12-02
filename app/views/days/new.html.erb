@@ -1,10 +1,19 @@
 <div class="container text-center">
+  
+  <% if @day.errors.any? %>
+  
+    <% @day.errors.full_messages.each do |message| %>
+      <p class="lato red"><%= message %></p>
+    <% end %>
+  
+  <% end %>
+  
   <h3>Input your weight. #Be honest!</h3>
 
 
   <%= form_for @day do |f| %>
   
-    <p>Please enter date as yyyy-mm-dd</p>
+    
       <div class="field form-horizontal">
             <%= f.label :date, class: "control-label"%>
         <%=   f.date_field :date, class: "form-control text-center", id: "datepicker"%>

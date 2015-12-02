@@ -1,12 +1,23 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  load_and_authorize_resource
 
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    if current_user.admin?
+    @users = User.all.paginate(page: params[:page], per_page: 10)
+    
+    else
+    flash[:alert] = 'Your are unable to access that page.'
+    redirect_to current_user
+  
+    end
   end
+
+
+
+
 
   # GET /users/1
   # GET /users/1.json
@@ -14,11 +25,26 @@ class UsersController < ApplicationController
   def show
       
     
+
+    
     #first grab ALL the days from the specific user
-    user_days = Day.where(user_id: current_user.id)
+    @user_days = Day.where(user_id: current_user.id)
+    
+   
+    
     #sort days by date
-    @days_sorted =user_days.sort_by &:date
-    @all =user_days.sort_by &:date
+    @days_sorted =@user_days.sort_by &:date
+    @all = @user_days.sort_by &:date
+   
+
+   
+   #if nothing in the array, the user has no inputted days and will be redirected.
+   if @user_days.length ==0
+     flash[:notice] = "Please input your weight to get started."
+     redirect_to days_new_path
+    return
+   end
+   
     
     
     
@@ -26,6 +52,7 @@ class UsersController < ApplicationController
     #arrays for graphing
     dates_array = []
     weight_array = []
+    
     @days_sorted. each do |y|
       dates_array.push(y.date)
       weight_array.push(y.weight)
@@ -116,6 +143,10 @@ class UsersController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+  
+    
+    
+    
     def set_user
       @user = User.find(params[:id])
     end

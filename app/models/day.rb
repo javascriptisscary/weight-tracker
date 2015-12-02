@@ -10,7 +10,7 @@ class Day < ActiveRecord::Base
   private
   def is_valid_date
     unless date.is_a?(Date)
-  self.errors.add(:date, "Is not a valid date")
+  self.errors.add(:date, "Not a valid date")
     end
   end
   

@@ -1,12 +1,12 @@
 class DaysController < ApplicationController
-  before_action :authenticate_user!
+  load_and_authorize_resource
   require 'date'
   
   def index
     #first grab ALL the days from the specific user, order by date, then paginate
     @user_days = Day.where(user_id: current_user.id).order(date: :asc).paginate(page: params[:page], per_page: 10)
     
-   end
+  end
 
   
   
@@ -31,7 +31,7 @@ class DaysController < ApplicationController
 
   def create
     
-    @day = Day.new(post_params)
+    @day = Day.new(day_params)
     @day.user_id = current_user.id
     @day.weight.round(1)
     
@@ -100,19 +100,19 @@ class DaysController < ApplicationController
 
 
 #not in use just yet
-  #def update
-  #  @day = Day.find(params[:id])
-  #  @user = current_user
-  #  respond_to do |format|
-  #    if @day.update(post_params)
-  #      format.html { redirect_to days_index_path, notice: 'Successfully updated.' }
-  #      format.json { render :show, status: :ok, location: @day }
-  #    else
-  #      format.html { render :edit }
-  #      format.json { render json: @day.errors, status: :unprocessable_entity }
-  #    end
-  #  end
-  #end
+  def update
+    @day = Day.find(params[:id])
+    @user = current_user
+    respond_to do |format|
+      if @day.update(day_params)
+        format.html { redirect_to days_index_path, notice: 'Successfully updated.' }
+        format.json { render :show, status: :ok, location: @day }
+      else
+        format.html { render :edit }
+        format.json { render json: @day.errors, status: :unprocessable_entity }
+      end
+    end
+  end
   
   
 
@@ -138,8 +138,8 @@ class DaysController < ApplicationController
   
   
 
-    def post_params
-      params.require(:day).permit(:date, :weight )
+    def day_params
+      params.require(:day).permit(:date, :weight, :user_id )
     
     end
 
