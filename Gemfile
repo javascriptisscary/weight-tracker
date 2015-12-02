@@ -71,3 +71,4 @@ group :development, :test do
 gem 'sqlite3'
 end
 
+ruby "2.2.2"
