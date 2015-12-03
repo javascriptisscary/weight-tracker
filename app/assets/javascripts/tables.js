@@ -1,6 +1,6 @@
-$(document).on('page:change', function(){
+$(document).ready(function () {
 
-debugger;
+
 
 //change table row color to green if user lost weight, red if gained, blue if the same.
   function red_or_green() {
