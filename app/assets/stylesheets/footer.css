@@ -10,9 +10,12 @@
 
 .footer a {
     float:right;
+    margin-right:1%;
 }
 
-
+.footer-link{
+  color:grey;
+}
 
 /* sticky footer for singup pages where the regular footer doesn't quite work */
 .sticky-footer{
