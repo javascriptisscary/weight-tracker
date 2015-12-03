@@ -1,10 +1,8 @@
 jQuery(function($){$(document).ready(function () {
 
-//datepicker for calender
-$( "#datepicker" ).datepicker({ format: 'yyyy-mm-dd'}).datepicker("setDate", new Date());
 
-    
-  
+
+
  //Fade notices and alerts 
    $('.notice').fadeOut(10000);
     $('.alert').fadeOut(10000);
@@ -50,6 +48,10 @@ if (context[0] ==null) {
 
 
 red_or_green();
+
+
+//datepicker for calender
+$( "#datepicker" ).datepicker({ format: 'yyyy-mm-dd'}).datepicker("setDate", new Date());
 
 });
        
