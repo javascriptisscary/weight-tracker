@@ -4,10 +4,11 @@ jQuery(function($){$(document).ready(function () {
 
 
  //Fade notices and alerts 
-   $('.notice').fadeOut(10000);
+  
+    $('.notice').fadeOut(10000);
     $('.alert').fadeOut(10000);
     
-    
+
     
 
 //change table row color to green if user lost weight, red if gained, blue if the same.
@@ -49,10 +50,13 @@ if (context[0] ==null) {
 
 red_or_green();
 
-
 //datepicker for calender
-$( "#datepicker" ).datepicker({ format: 'yyyy-mm-dd'}).datepicker("setDate", new Date());
+    $( "#datepicker" ).datepicker({ format: 'yyyy-mm-dd'}).datepicker("setDate", new Date());
 
-});
+  });
        
        });
+       
+       
+       
+    
