@@ -1,39 +1,49 @@
-<%= image_tag("bread2.jpg", class: "img-responsive welcome") %>
+<div id="welcome" class="text-center">
+  <div class="container">
+    <%= image_tag("wt.jpg", class: "img-responsive img-circle logo") %>
+  </div>
+  <div  id="text-contain">
+    <h1 class="lato welcome-text"><strong>The new way to track your weight.</strong></h1>
+  </div>
+  <div class="container" id="text-contain2">
+    <p id="paragraph">Introducing <strong><font color="red">Weight-Tracker</font></strong>, an easy access database built with ruby-on-rails. Storing your weight has never been easier.</p>
+  </div>
+  <div class="container" id="button-contain">
+  <%= link_to 'Signup!', new_user_registration_path, id: "signup-welcome"%>
+  </div>
+</div>
 
-<section class="container text-center lato">
-  <span class="glyphicon glyphicon-floppy-saved"></span>
-  <h3 class= "header">Tracking</h3>
-  <p>It's <strong>free</strong> and always will be.</p>
-
-
+<div id="content">
+  <section class="container text-center lato">
+    <span class="glyphicon glyphicon-floppy-saved"></span>
+    <h3 class= "header">Tracking</h3>
+    <p>It's <strong>free</strong> and always will be.</p>
   </section>
-<div class="border"></div>
-<section class="container text-center lato">
-  <span class="glyphicon glyphicon-signal"></span>
-  <h3 class="header">Graphs</h3>
-  <p>Beautiful area graphs to display your progress.</p>
-  <%= image_tag("area-graph.jpg", class: "img-responsive features-pic") %>
-  <h3 class="header">Tables</h3>
-  <%= image_tag("table-pic.jpg", class: "img-responsive features-pic") %>
-</section>
-<div class="border"></div>
-<section class="container text-center lato">
-  <span class="glyphicon glyphicon-certificate"></span>
-  <h3 class="header">Coming Soon</h3>
-  <ul class="list">
-    <li>Notes for each day, stored to the database.</li>
-    <li>Save pictures from specific days to SEE your progress.</li>
-    <li>Goal weight and graph.</li>
-  </ul>
-</section>
+  <div class="border"></div>
+  <section class="container text-center lato">
+    <span class="glyphicon glyphicon-signal"></span>
+    <h3 class="header">Graph your Progress</h3>
+    <p>Beautiful area graphs and tables to display your progress.</p>
+  <%= image_tag("screen.png", class: "img-responsive features-pic") %>
+  </section>
+  <div class="border"></div>
+  <section class="container text-center lato">
+    <span class="glyphicon glyphicon-certificate"></span>
+    <h3 class="header">Coming Soon</h3>
+    <ul class="list">
+      <li>Notes for each day, stored to the database.</li>
+      <li>Save pictures from specific days to SEE your progress.</li>
+      <li>Goal weight and graph.</li>
+    </ul>
+  </section>
   <div class="border"></div>
   <section class="container text-center lato">
     <span class="glyphicon glyphicon-pencil"></span>
-  <h3 class="header">Sign up</h3>
-  <p id="sent">Tracking weight is <a href="http://www.news.cornell.edu/stories/2015/06/keeping-track-weight-daily-may-tip-scale-your-favor" target="_blank">proven</a> to help keep the pounds of your body, and make you look your best!</p>
+    <h3 class="header">Sign up</h3>
+    <p id="sent">Tracking weight is <a href="http://www.news.cornell.edu/stories/2015/06/keeping-track-weight-daily-may-tip-scale-your-favor" target="_blank">proven</a> to help keep the pounds of your body, and make you look your best!</p>
   <%= link_to 'Signup!', new_user_registration_path, id: "signup"%>
-</section>
-
+  </section>
+</div>
 <%= render "layouts/footer" %>
 
 
