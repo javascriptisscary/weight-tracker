@@ -1,6 +1,8 @@
 jQuery(function($){$(document).ready(function () {
 
 
+   
+   
 
 
  //Fade notices and alerts 
@@ -54,6 +56,57 @@ red_or_green();
     $( "#datepicker" ).datepicker({ format: 'yyyy-mm-dd'}).datepicker("setDate", new Date());
 
   });
+       
+       
+       
+       
+       
+       function getActualWidth()
+{
+    var actualWidth = window.innerWidth ||
+                      document.documentElement.clientWidth ||
+                      document.body.clientWidth ||
+                      document.body.offsetWidth;
+    console.log(actualWidth);
+    return actualWidth;
+}  
+
+   
+   
+   function fixMobile(size) {
+    var logo = document.getElementById("logo");
+    var welcome_text = document.getElementsByClassName("welcome-text");
+    var text_contain = document.getElementById("text-contain");
+    var signup = document.getElementById("signup-welcome");
+    
+   
+    
+    if (size < 900) {
+       logo.parentNode.removeChild(logo);
+       text_contain.style.marginTop ="35%";
+       welcome_text[0].style.fontSize = "3em";
+       signup.style.fontSize = "1em";
+    }
+   }
+   
+   
+
+   
+   
+
+    
+    
+    //grab window size, fix view for mobile by removing logo changing text sizes
+ 
+       
+       fixMobile(getActualWidth());
+         
+         
+       
+       
+       
+       
+       
        
        });
        
