@@ -63,6 +63,8 @@ class UsersController < ApplicationController
     dates_array.each do |x|
       y =x.to_s
       y.slice!("2015-")
+      y.slice!("2016-")
+      y.slice!("2017-")
       no_year_array.push(y)
     end 
     
