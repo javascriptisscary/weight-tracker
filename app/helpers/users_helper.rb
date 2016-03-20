@@ -10,7 +10,7 @@ module UsersHelper
     change =first-last
     
     if change > 0
-        return content_tag :span, "You've lost #{change.round(1)} pounds since #{dates.first.date}", class: "green"
+      return content_tag :span, "You've lost #{change.round(1)} pounds since #{dates.first.date}", class: "green"
     elsif change < 0
       return content_tag :span, "You've gained #{-change.round(1)} pounds since #{dates.first.date}", class: "red"
     else
@@ -32,9 +32,9 @@ module UsersHelper
       if change > 0
         return content_tag :span, "You've lost #{change.round(1)} total pounds", class: "green"
       elsif change < 0
-      return content_tag :span, "You've gained #{-change.round(1)} total pounds", class: "red"
+        return content_tag :span, "You've gained #{-change.round(1)} total pounds", class: "red"
       else
-      return "0."
+        return "0."
       end
      
   end

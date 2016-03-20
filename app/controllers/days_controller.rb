@@ -1,5 +1,6 @@
 class DaysController < ApplicationController
   load_and_authorize_resource
+  include DaysHelper
   require 'date'
   
   def index
@@ -33,76 +34,29 @@ class DaysController < ApplicationController
     
     @day = Day.new(day_params)
     @day.user_id = current_user.id
-    @day.weight.round(1)
     
     
-    
-    
-  #convoluted date validation begins
-    
-    #change date back to string so it can be parsed by Date.parse
-    
-    x=@day.date.to_s
-    
-    
-   
-    
-    
-    #if first number in string is a zero they inputted the year without using 4 digits
-    if x[0] =="0"
-      flash[:alert] = 'Date not valid. Please use format YYYY-MM-DD'
-      redirect_to :back
-      return
-        
-    end
-    
-    #parse date for validation
-    begin
-      Date.parse(x)
-      rescue ArgumentError
-        flash[:alert] = 'Date not valid. Please use format YYYY-MM-DD'
-        
-        return
-    end
-    
-     @day.date = x
-    
-  
-  
-  
-  #if same date as another entry, return and flash alert
-    
-    @user_days= Day.where(user_id: current_user.id)
-      @user_days.each { |day|
-        
-        if day.date ==@day.date
-            flash[:alert] = 'Date already logged. Try again.'
-            redirect_to :back
-            return
+      respond_to do |format|
+        if @day.save
+          format.html { redirect_to user_path(current_user.id), notice: 'Day was successfully created.' }
+          format.json { render :show, status: :created, location: @day }
+        else
+          format.html { render :new }
+          format.json { render json: @day.errors, status: :unprocessable_entity }
         end
-        
-        }
-       
-
-     respond_to do |format|
-      if @day.save
-        format.html { redirect_to user_path(current_user.id), notice: 'Day was successfully created.' }
-        format.json { render :show, status: :created, location: @day }
-      else
-        format.html { render :new }
-        format.json { render json: @day.errors, status: :unprocessable_entity }
       end
-    end
-     
+    
   end
   
 
 
 
-#not in use just yet
+
   def update
     @day = Day.find(params[:id])
+    
     @user = current_user
+    
     respond_to do |format|
       if @day.update(day_params)
         format.html { redirect_to days_index_path, notice: 'Successfully updated.' }
