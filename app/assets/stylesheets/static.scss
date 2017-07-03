@@ -20,7 +20,6 @@ body{
     top: 0px;
     left: 0px;
     color: white;
-   
 }
 
 #logo {
@@ -37,8 +36,6 @@ body{
     z-index:100;
 }
 
-
-
 #text-contain {
     background-color:rgba(255,0,0,0.5);
     margin-top:3%;
@@ -49,8 +46,7 @@ body{
 #text-contain2 {
     background-color: rgba(0, 0, 0, 0.8);
     padding-bottom: 0;
-    padding-top: .5%;
-    
+    padding-top: .5%;    
 }
 
 .welcome-text {
@@ -58,7 +54,6 @@ body{
     font-family: "lato" arial sans-serif;
     font-weight: 700;
     font-size: 5em;
-    
 }
 
 #paragraph {
@@ -66,29 +61,17 @@ body{
     text-shadow: 1px 1px black;
     line-height: 1.42857;
     color: BeanRed;
-    
-    
 }
 
-
-.kalam {
-    
+.kalam {    
     font-family: "kalam", verdana,  arial,helvetica, sans-serif;
-    
 }
-
-
-
-
-
 
 p {
-    font-size: 1.2em;
-    
+    font-size: 1.2em;    
 }
 
 .header {
-    
     margin-top:5%;
     font-family: "lato"
 }
@@ -106,30 +89,22 @@ p {
 }
 
 .features-pic {
-    
     box-shadow: 10px 10px 5px grey;
     border: 1px solid black;
     border-radius: 4px;
- 
 }
-
-
 
 .sign-up {
     font-size: 1.5em;
     text-decoration: underline;
 }
 
-
-.border {
-    
+.border {    
      box-shadow: 2px 2px 3px #888888;
      border-bottom: 2px solid gray;
      margin-top: 2%;
      margin-bottom:2%;
 }
-
-
 
 .glyphicon{
     font-size:8em;
@@ -140,14 +115,10 @@ p {
 }
 
 .container{
-   margin-top:2%;
-   
-   padding-bottom:1%;
-    
-    
+    margin-top:2%;   
+    padding-bottom:1%;
     background-color:auto;
 }
-
 
 #signup {
   background: #3498db;
@@ -167,13 +138,11 @@ p {
   color: #ffffff;
   font-size: 20px;
   padding: 10px 20px 10px 20px;
-  text-decoration: none;
-  
+  text-decoration: none;  
 }
 
 #button-contain{
     margin-top:5%;
-    
 }
 
 #signup:hover {
@@ -188,8 +157,7 @@ p {
 
 
 #signup-welcome {
-  
- background: #34d94d;
+  background: #34d94d;
   background-image: -webkit-linear-gradient(top, #34d94d, #2cb882);
   background-image: -moz-linear-gradient(top, #34d94d, #2cb882);
   background-image: -ms-linear-gradient(top, #34d94d, #2cb882);
@@ -203,10 +171,7 @@ p {
   padding: 10px 20px 10px 20px;
   border: solid #1f628d 2px;
   text-decoration: none;
-  
 }
-
-
 
 #signup-welcome:hover {
   background: #3cb0fd;
@@ -217,9 +182,6 @@ p {
   background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
   text-decoration: none;
 }
-
-
-
 
 #sent{
     margin-bottom:5%;

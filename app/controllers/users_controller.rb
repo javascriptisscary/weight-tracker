@@ -6,54 +6,35 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     if current_user.admin?
-    @users = User.all.paginate(page: params[:page], per_page: 10)
-    
+      @users = User.all.paginate(page: params[:page], per_page: 10)
     else
-    flash[:alert] = 'Your are unable to access that page.'
-    redirect_to current_user
-  
+      flash[:alert] = 'Your are unable to access that page.'
+      redirect_to current_user
     end
   end
-
-
-
-
 
   # GET /users/1
   # GET /users/1.json
   #profile page after logging in
   def show
-      
-    
-
-    
     #first grab ALL the days from the specific user
     @user_days = Day.where(user_id: current_user.id)
-    
-   
-    
     #sort days by date
-    @days_sorted =@user_days.sort_by &:date
+    @days_sorted = @user_days.sort_by &:date
     @all = @user_days.sort_by &:date
    
-
-   
-   #if nothing in the array, the user has no inputted days and will be redirected.
-   if @user_days.length ==0
-     flash[:notice] = "Please input your weight to get started."
-     redirect_to days_new_path
-    return
-   end
-   
-    
-    
-    
+    #if nothing in the array, the user has no inputted days and will be redirected.
+    if @user_days.length ==0
+      flash[:notice] = "Please input your weight to get started."
+      redirect_to days_new_path
+      return
+    end
    
     #arrays for graphing
     dates_array = []
     weight_array = []
     
-    @days_sorted. each do |y|
+    @days_sorted.each do |y|
       dates_array.push(y.date)
       weight_array.push(y.weight)
     end
@@ -71,28 +52,19 @@ class UsersController < ApplicationController
     #grab last 7 days for recent entries table
     @last_7 = @days_sorted.pop(7)
     
-   
    #lazy high graph
     @chart = LazyHighCharts::HighChart.new('area') do |f|
       f.title(:text => "Weight by Date")
-      
-      
-        f.xAxis(categories: no_year_array)
-      
-        f.series(:name => "Pounds", :yAxis => 0, :data => weight_array)
-      
-
+      f.xAxis(categories: no_year_array)
+      f.series(:name => "Pounds", :yAxis => 0, :data => weight_array)
       f.yAxis [
-        {:title => {:text => "Weight",  :margin => 50} }
-        
+          {:title => {:text => "Weight",  :margin => 50} }
       ]
-
       f.legend(:align => 'right', :verticalAlign => 'top', :y => 75, :x => -50, :layout => 'vertical',)
       f.chart({:defaultSeriesType=>"line"})
     end
  
-  
-  end
+  end #end show
 
   # GET /users/new
   def new
@@ -143,20 +115,17 @@ class UsersController < ApplicationController
     end
   end
 
-  
-  
-  
-  
   private
-    # Use callbacks to share common setup or constraints between actions.
+  # Use callbacks to share common setup or constraints between actions.
     
-    def set_user
-      @user = User.find(params[:id])
-    end
+  def set_user
+    @user = User.find(params[:id])
+  end
     
     
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def user_params
-      params.require(:user).permit(:first_name, :last_name)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def user_params
+    params.require(:user).permit(:first_name, :last_name)
+  end
+  
 end
